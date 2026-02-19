@@ -1,0 +1,38 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import Buscador from '../components/Buscador.astro';
+import Palabra from '../components/PalabraDia.astro';
+import Lengicon from '../components/Lengicon.astro';
+import Categicon from "../components/Categicon.astro"
+---
+
+<Layout>
+  
+    <Buscador />
+  <div id="palabradia" >
+    <Palabra/>
+    
+    <!-- categorias  y lenguas disponibles  -->
+    <section class="grid lg:grid-cols-2 gap-5 my-5">
+      <div class="bg-white border-2 border-primary-100">
+        <h3 class="border-b border-primary-600 p-3"><span class="text-amber-400">■</span> Lenguas disponibles</h3>
+        <div class="flex flex-wrap justify-center space-x-5 my-5">
+          <Lengicon nombre='Náhuatl' ruta='lengua1' img='motivo1' />
+          <Lengicon nombre='Maya' ruta='lengua2' img='motivo2' />
+          <Lengicon nombre='Zapoteco' ruta='lengua3' img='motivo3'  />
+          <Lengicon nombre='Popoluca' ruta='lengua4' img='motivo4'  />
+        </div>
+      </div>
+      <div class="bg-white border-2 border-primary-100">
+        <h3 class="border-b border-primary-600 p-3"><span class="text-orangesp-500">■</span> Explorar categorías</h3>
+        <div class="flex flex-wrap justify-center space-x-5 my-5">
+          <Categicon nombre='Alimentos' ruta="categoria1" img="motivo4"/>
+          <Categicon nombre='Objetos' ruta="categoria1" img="motivo4" />
+          <Categicon nombre='Cuerpo' ruta="categoria1" img="motivo4" />
+          <Categicon nombre='Verbos' ruta="categoria1" img="motivo4" />
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

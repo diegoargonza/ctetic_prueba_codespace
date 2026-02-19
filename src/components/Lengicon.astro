@@ -1,0 +1,29 @@
+---
+type Fondo = "motivo1" | "motivo2" | "motivo3" | "motivo4";
+interface Props {
+  nombre: string;
+  ruta: string;
+  img: string;
+}
+
+const { nombre, ruta, img } = Astro.props;
+
+const fondos: Record<Fondo, string> = {
+  motivo1: "bg-[url('../assets/img/motivo1.svg')]",
+  motivo2: "bg-[url('../assets/img/motivo2.svg')]",
+  motivo3: "bg-[url('../assets/img/motivo3.svg')]",
+  motivo4: "bg-[url('../assets/img/motivo4.svg')]",
+};
+
+---
+
+
+<a href={"./" + ruta} class="max-w-md p-2 rounded-full bg-linear-to-br from-amber-300/70 via-amber-200/60 to-amber-300/70 grid place-content-center">
+ <!--  <div class="bg-primary-100 bg-[url(../assets/img/motivo1.svg)] bg-size-[150px] bg-no-repeat rounded-full w-32 h-32 flex justify-center items-end pb-8">   -->
+  <div class={`bg-amber-100 ${fondos[img]} bg-size-[150px] bg-no-repeat rounded-full w-32 h-32 flex justify-center items-end pb-8`}>  
+    
+     <strong class="text-primary-800 text-xl font-bold"> { nombre }</strong>
+  </div>
+</a>
+
+

@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Palabras from "../components/Palabras.astro";
+
+const datos = {
+  a: [
+    "Atl",
+    "Acatl",
+    "Acalli",
+    "Ahuehuetl",
+    "Ayotl",
+    "Amoxtli",
+    "Atole",
+    "Atolli",
+    "Ahuacatl",
+    "Aztatl"
+  ],
+  c: [
+    "Calli",
+    "Coatl",
+    "Coyotl",
+    "Cihuatl",
+    "Cualli",
+    "Cuauhtli",
+    "Chilli",
+    "Chalchihuitl",
+    "Cozcatl",
+    "Centli"
+  ],
+  e: [
+    "Ehecatl",
+    "Etzalli",
+    "Eztli",
+    "Epatl",
+    "Ehua",
+    "Eloxochitl",
+    "Ehecacozcatl",
+    "Ehuatl",
+    "Etzalcualiztli",
+    "Ehuac"
+  ],
+  i: [
+    "Iztli",
+    "Itzcuintli",
+    "Icpalli",
+    "Ihuan",
+    "Ilhuicatl",
+    "Ilamatl",
+    "Itzpapalotl",
+    "Izcalli",
+    "Ixtli",
+    "Ihuitl"
+  ],
+  m: [
+    "Metztli",
+    "Mazatl",
+    "Miquiztli",
+    "Malinalli",
+    "Mecatl",
+    "Mictlan",
+    "Molcaxitl",
+    "Mixcoatl",
+    "Macuahuitl",
+    "Mayatl"
+  ],
+  n: [
+    "Nahuatl",
+    "Nacatl",
+    "Nezahualcoyotl",
+    "Nextli",
+    "Nochtli",
+    "Nenetl",
+    "Nantli",
+    "Nelli",
+    "Nimitztla",
+    "Nopalli"
+  ],
+  o: [
+    "Ocelotl",
+    "Ollin",
+    "Ometotl",
+    "Oztotl",
+    "Ocotl",
+    "Ohuatl",
+    "Oquichtli",
+    "Ozomahtli",
+    "Ocoxochitl",
+    "Opochtli"
+  ],
+  p: [
+    "Pachichi",
+    "Papalotl",
+    "Pilli",
+    "Petlatl",
+    "Popocatépetl",
+    "Pozolli",
+    "Pochotl",
+    "Pitzotl",
+    "Pinolli",
+    "Pantli"
+  ],
+  t: [
+    "Tepetl",
+    "Tlalli",
+    "Tlaloc",
+    "Tlacatl",
+    "Tonatiuh",
+    "Toxcatl",
+    "Tecpatl",
+    "Ticitl",
+    "Tlatolli",
+    "Tlamatini"
+  ],
+  x: [
+    "Xoco",
+    "Xochitl",
+    "Xihuitl",
+    "Xipe",
+    "Xoloitzcuintli",
+    "Xilonen",
+    "Xiuhcoatl",
+    "Xayacatl",
+    "Xocotl",
+    "Xicalli"
+  ]
+};
+---
+
+
+
+<Layout>
+
+      <!-- categorias  y lenguas disponibles  -->
+      <section class="md:grid grid-cols-5 items-start gap-5 w-11/12 lg:w-4xl mx-auto">
+        <div>
+          <div class="p-2 rounded-full bg-linear-to-br from-amber-300/70 via-amber-200/60 to-amber-300/70 w-36 h36 grid place-content-center">
+            <div class="bg-amber-100 bg-[url('../assets/img/motivo1.svg')] bg-size-[150px] bg-no-repeat rounded-full w-32 h-32 flex justify-center items-end pb-8"></div>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <h1 class="w-full text-center lg:text-left  border-b-2 border-dotted mb-2 pb-2">Náhuatl</h1>
+   
+          <p>El náhuatl (autoglotónimo: nawatlahtolli) o mexicano[5]​ es una macrolengua yutoazteca que se habla principalmente en México y Centroamérica. Durante la mayor parte de la historia del náhuatl, este se mantuvo como lengua franca de la región.[6]​[7]​ En la actualidad, el idioma mexicano es la lengua autóctona de México con mayor número de hablantes,[8]​ con cerca de tres millones, la mayoría bilingüe en español.
+            La expansión de la lengua podría haber empezado con la expansión de la cultura coyotlatelca durante el siglo V y siglo VI d. C. en Mesoamérica,[9]​ la lengua comenzó su rápida difusión por el Eje Neovolcánico y se extendió por la costa del Pacífico. Fue así como dio origen al pochuteco y a otra rama en la región geográfica de Veracruz que más tarde daría origen al náhuat de El Salvador.
+          </p>
+          <Palabras categorias={datos} lengua='Náhuatl' />
+          
+        </div>
+      </section>
+</Layout>

@@ -1,0 +1,75 @@
+---
+interface Props {
+  categorias: Record<string, string[]>;
+  lengua: string;
+}
+
+const { categorias, lengua } = Astro.props as Props;
+const letras = Object.keys(categorias);
+---
+
+<section>
+  <h2>Palabras en { lengua }</h2>
+
+  <!-- MENÚ -->
+  <ul class="flex flex-wrap gap-3 py-5">
+    {letras.map((letra) => (
+      <li class="letra cursor-pointer" data-letra={letra}>
+        {letra.toUpperCase()}
+      </li>
+    ))}
+
+    <li class="letra cursor-pointer active w-auto px-3" data-letra="all">
+      Ver todo
+    </li>
+  </ul>
+
+  <!-- CONTENIDO -->
+  
+  {Object.entries(categorias).map(([letra, palabras]) => (
+    <div data-group={letra} class="grupo mb-10">
+      <p class="text-xl text-center text-primary-700 font-display font-bold bg-orange-400/20 border-b border-dotted py-1 mb-2">
+        Palabras con <strong class="uppercase font-bold">{letra}</strong>
+      </p>
+
+      <p class="flex flex-wrap gap-3">
+        {palabras.map((palabra) => (
+          <a class="palabra">{palabra}</a>
+        ))}
+      </p>
+    </div>
+  ))}
+</section>
+
+<script>
+  const botones = document.querySelectorAll(".letra");
+  const grupos = document.querySelectorAll(".grupo");
+
+  function activar(letra) {
+    // Quitar active
+    botones.forEach(b => b.classList.remove("active"));
+
+    // Agregar active al clickeado
+    document.querySelector(`[data-letra="${letra}"]`)
+      ?.classList.add("active");
+
+    // Mostrar / ocultar grupos
+    grupos.forEach(g => {
+      if (letra === "all") {
+        g.style.display = "block";
+      } else {
+        g.style.display =
+          g.dataset.group === letra ? "block" : "none";
+      }
+    });
+  }
+
+  botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+      activar(boton.dataset.letra);
+    });
+  });
+
+  // Estado inicial
+  activar("all");
+</script>

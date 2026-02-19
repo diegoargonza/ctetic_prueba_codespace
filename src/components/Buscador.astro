@@ -1,0 +1,61 @@
+---
+import Esp from "../assets/img/flag2.jpg"
+import Audio from "../assets/img/audio.svg"
+---
+<section class="bg-white p-8">
+  <h1 class="">Diccionario parlante de lenguas indígenas</h1>
+      <!-- Selección de idiomas -->
+      <div class="flex flex-wrap justify-center gap-4 items-center mt-5">
+        <div class="">
+          <label class="mr-2">Traducir de</label>
+          <select class="border p-1">
+            <option>idiomas</option>
+              <option>Español</option>
+              <option>Inglés</option>
+          </select>
+        </div>
+        <div class="">
+          <label class="mr-4">a</label>
+          <select class="border p-1">
+            <option>Lenguas</option>
+          
+            <option>Náhuatl</option>
+            <option>Maya</option>
+            <option>Zapoteco</option>
+            <option>Popoluca</option>
+          </select>
+        </div>
+        <div class="w-full flex justify-center ">
+          <input id="buscado" type="text">
+        </div>
+        <div>
+          <button id="ocultar">Buscar</button>
+        </div>
+      </div>
+      <p class="text-center mt-5"> Resultados para <strong id="palBuscada" class="text-orangesp-600"></strong></p>
+      <div id="resultado" class=" hidden w-2xl  rounded-xl bg-secondary-50 mx-auto px-10 py-5">
+        
+          <h2 class="flex justify-center gap-2 text-4xl text-center font-bold border-b border-dotted mb-2 pb-2"><span id="palBuscada2" ></span><img src={Audio.src} alt="Icono símbolo de audio" class="h-10"> </h2>
+          <p class="text-xl text-center"><strong class="font-bold">Esp:</strong> Lorem ipsum</p>
+          <h3>Ejemplos</h3>
+          <ol>
+            <li><p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa facere sapiente quia at, cumque.</p></li>
+            <li><p>Fugiat error possimus ut vero quod animi! Dolorum consequuntur ab aut veniam minima quaerat ipsum maiores.</p></li>
+          </ol>
+        
+      </div>
+</section>
+
+
+<script>
+  const boton = document.getElementById("ocultar");
+
+  boton?.addEventListener("click", () => {
+    
+    document.getElementById("palabradia")?.classList.add("hidden");
+    document.getElementById("resultado")?.classList.remove("hidden");
+    var valor = document.getElementById("buscado")?.value;
+    document.getElementById("palBuscada").innerHTML = valor
+    document.getElementById("palBuscada2").innerHTML = valor
+  });
+</script>

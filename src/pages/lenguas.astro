@@ -1,0 +1,24 @@
+
+---
+
+import Layout from '../layouts/Layout.astro';
+import Buscador from '../components/Buscador.astro';
+import Palabra from '../components/Palabra.astro';
+import Lengicon from '../components/Lengicon.astro';
+import Categicon from "../components/Categicon.astro"
+---
+
+<Layout>
+    <!-- categorias  y lenguas disponibles  -->
+    <section class="">
+      <h1>Lenguas disponibles</h1>
+      
+          <div class="flex flex-wrap justify-center space-x-5 my-5">
+            <Lengicon nombre='Náhuatl' ruta='../lengua1' img='motivo1' />
+            <Lengicon nombre='Maya' ruta='../lengua2' img='motivo2' />
+            <Lengicon nombre='Zapoteco' ruta='../lengua3' img='motivo3'  />
+            <Lengicon nombre='Popoluca' ruta='../lengua4' img='motivo4'  />
+		      </div>
+        
+    </section>
+</Layout>

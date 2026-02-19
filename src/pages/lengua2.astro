@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Palabras from "../components/Palabras.astro";
+
+const datos = {
+  a: [
+    "Aak",
+    "Ajal",
+    "Akab",
+    "Ala",
+    "Alux",
+    "Am",
+    "Analpolkuuts",
+    "Anek",
+    "Ats",
+    "Ayim"
+  ],
+
+  b: [
+    "Baalam",
+    "Bak",
+    "Báaxal",
+    "Bey",
+    "Bix",
+    "Boox",
+    "Buk",
+    "Buts",
+    "Báalche",
+    "Balamkab"
+  ],
+
+  c: [
+    "Cab",
+    "Caan",
+    "Cah",
+    "Can",
+    "Cenote",
+    "Cib",
+    "Coch",
+    "Cocom",
+    "Cux",
+    "Cutz"
+  ],
+
+  h: [
+    "Ha",
+    "Hach",
+    "Halach",
+    "Hanal",
+    "Hool",
+    "Hun",
+    "Huh",
+    "Huhul",
+    "Huhub",
+    "Huun"
+  ],
+
+  i: [
+    "Ich",
+    "Ik",
+    "Ix",
+    "Ixim",
+    "Itza",
+    "Iik",
+    "Iil",
+    "Ixiim",
+    "Ixtab",
+    "Ixtun"
+  ],
+
+  k: [
+    "Kaan",
+    "Kab",
+    "Kak",
+    "Kal",
+    "Kan",
+    "Kax",
+    "Keh",
+    "Kuk",
+    "Kutz",
+    "K'in"
+  ],
+
+  m: [
+    "Ma",
+    "Máax",
+    "Mak",
+    "Maya",
+    "Mejen",
+    "Muun",
+    "Mul",
+    "Muk",
+    "Mucuy",
+    "Much"
+  ],
+
+  n: [
+    "Na",
+    "Nab",
+    "Nah",
+    "Nal",
+    "Nicté",
+    "Nohoch",
+    "Noh",
+    "Nuum",
+    "Nup",
+    "Nux"
+  ],
+
+  p: [
+    "Pak",
+    "Pal",
+    "Pech",
+    "Petén",
+    "Pix",
+    "Pol",
+    "Pop",
+    "Poot",
+    "Puch",
+    "Puun"
+  ],
+
+  t: [
+    "Taak",
+    "Tab",
+    "Tan",
+    "Taan",
+    "Tepal",
+    "Toh",
+    "Tok",
+    "Tulum",
+    "Tun",
+    "Tzimin"
+  ],
+
+  x: [
+    "Xaak",
+    "Xaman",
+    "Xbalam",
+    "Xcaret",
+    "Xel",
+    "Xib",
+    "Ximbal",
+    "Xkeban",
+    "Xook",
+    "Xtabay"
+  ]
+};
+
+---
+
+
+
+<Layout>
+
+      <!-- categorias  y lenguas disponibles  -->
+      <section class="md:grid grid-cols-5 items-start gap-5 w-11/12 lg:w-4xl mx-auto">
+        <div>
+          <div class="p-2 rounded-full bg-linear-to-br from-amber-300/70 via-amber-200/60 to-amber-300/70 w-36 h36 grid place-content-center">
+            <div class="bg-amber-100 bg-[url('../assets/img/motivo2.svg')] bg-size-[150px] bg-no-repeat rounded-full w-32 h-32 flex justify-center items-end pb-8"></div>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <h1 class="w-full text-center lg:text-left  border-b-2 border-dotted mb-2 pb-2">Maya</h1>
+       
+          <p>Las lenguas mayas surgieron de una lengua ancestral común, utilizada por quienes vivían en el imperio maya de hace unos 5000 años, conocida como la lengua proto-maya. En otras palabras, el proto-maya era el idioma utilizado al principio de la existencia de esta cultura. El imperio maya se levantó alrededor del 1500 a.C. y existió durante muchos siglos, hasta su desaparición entre los años 800 y 900 d.C. Se cree que la primera división lingüística derivada del proto-maya se presentó alrededor del año 2200 a. C..
+
+Alrededor del mismo período, los antiguos mayas desarrollaron un sistema de escritura jeroglífico, considerado como uno de los sistemas de escritura más sofisticados de Mesoamérica, el cual consistía en cientos de signos y símbolos. Durante el período clásico, se presentó la mayoría de las divisiones lingüísticas, lo que provocó la aparición de más de 30 idiomas bajo seis ramas de la familia de lenguas mayas: el huastecano, el quiché, el yucateco, el kanjobal, el mam y el chʼolano-tzeltal. La lengua yucateca es la lengua maya más hablada en la actualidad. 
+          </p>
+          <Palabras categorias={datos} lengua='Maya' />
+          
+        </div>
+      </section>
+</Layout>

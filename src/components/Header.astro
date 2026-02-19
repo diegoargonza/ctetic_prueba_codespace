@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import Emblema from '../assets/img/emblema.svg';
+import UNAM from "../assets/img/UNAM.svg"
+import Separador from "../assets/img/separador.svg"
+---
+
+<header class="bg-[url(../assets/img/bg-head.png)] bg-contain flex justify-center lg:justify-start items-center gap-2  lg:h-32 p-2 lg:p-5" >
+	
+	<img src={UNAM.src} alt="Escudo UNAM" width="230" class="hidden md:block"> 
+	<img src={Separador.src} alt="Escudo UNAM" width="6.5"  class="hidden md:block mx-3">  
+	<img src={Emblema.src} alt="Emblema del Diccionario de Lenguas" width="65" class="w-10 xl:w-[65]"> 
+	<p class="text-white text-lg sm:text-3xl lg:text-5xl">Diccionario de lenguas</p>
+
+</header>
