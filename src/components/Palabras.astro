@@ -1,4 +1,6 @@
 ---
+import ModalResultado from './ModalResultado.astro';
+
 interface Props {
   categorias: Record<string, string[]>;
   lengua: string;
@@ -6,6 +8,8 @@ interface Props {
 
 const { categorias, lengua } = Astro.props as Props;
 const letras = Object.keys(categorias);
+
+
 ---
 
 <section>
@@ -34,14 +38,52 @@ const letras = Object.keys(categorias);
 
       <p class="flex flex-wrap gap-3">
         {palabras.map((palabra) => (
-          <a class="palabra">{palabra}</a>
+          <a class="palabra" >{palabra}</a>
         ))}
       </p>
     </div>
   ))}
 </section>
 
+<div class="fixed inset-0 place-content-center bg-black/50 hidden modal-prueba">
+<div class="max-w-md mx-auto bg-[#f9f7f1] rounded-2xl shadow-md p-6">
+  <button id="quitar">X</button>
+    <ModalResultado
+      word = 'Alt'
+      pronunciation = 'at'
+      type = 'sustantivo'
+      meanings = 'Agua'
+      examplesES = 'Nimitzmacaz atl.'
+      examplesNA = 'Te daré agua.'
+    />  
+  </div>
+</div>
+
 <script>
+  //Eventos para abrir modal y cerrar 
+  const btnPalabra = document.querySelectorAll('a.palabra');
+  const modal = document.querySelector('.modal-prueba')
+  const btnQuitar = document.querySelector('#quitar')
+  
+  // Maneja los clics en cada botón.
+  btnPalabra.forEach((button) => {
+    button.addEventListener('click', () => {
+      modal?.classList.remove('hidden')
+    });
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+
+  btnQuitar.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+
+
   const botones = document.querySelectorAll(".letra");
   const grupos = document.querySelectorAll(".grupo");
 
